@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "curry-py"
+version = "0.1.0"
+description = ""
+license = "MIT"
+authors = ["Ketsumi <mewtropolis.ketsumi@gmail.com>"]
+keywords = [
+    "python",
+    "fp",
+    "utility"
+]
+readme = "README.md"
+packages = [{include = "curry_py", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

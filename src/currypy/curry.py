@@ -20,6 +20,4 @@ def curry(f: Callable):
 
         return curry(wraps(f)(partial(f, *args, **kwargs)))
 
-    setattr(wrapper, "__signature__", signature(f))
-
-    return wrapper
+    return setattr(wrapper, "__signature__", signature(f)) or wrapper

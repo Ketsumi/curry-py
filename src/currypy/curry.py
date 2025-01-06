@@ -13,9 +13,7 @@ def curry(f: Callable):
 
     @wraps(f)
     def wrapper(*args, **kwargs):
-        if len(partial_signature_arguments(*args, **kwargs)) >= len(
-            signature(f).parameters
-        ):
+        if len(partial_signature_arguments(*args, **kwargs)) >= len(signature(f).parameters):
             return f(*args, **kwargs)
 
         return curry(wraps(f)(partial(f, *args, **kwargs)))
